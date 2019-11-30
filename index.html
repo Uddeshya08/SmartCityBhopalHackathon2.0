@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Maps</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+<!-- bus tab css -->
+    <link rel='stylesheet' id='child-theme-css'  href=' wp-content/themes/ward-child/2017/lib/datepicker/css/bootstrap-datepicker.min.css?ver=4.5.19' type='text/css' media='all' />
+<link rel='stylesheet' id='theme_stylesheet-css'  href=' wp-content/themes/ward-child/style.css?ver=4.5.19' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='http://mybusbhopal.in/wp-content/plugins/tablepress/css/default.min.css?ver=1.7' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://mybusbhopal.in/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://mybusbhopal.in/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://mybusbhopal.in/wp-includes/wlwmanifest.xml" />
+<link rel="canonical" href="http://mybusbhopal.in/tabular-view-routes/" />
+<link rel='shortlink' href='http://mybusbhopal.in/?p=358' />
+<link rel="alternate" type="application/json+oembed" href="http://mybusbhopal.in/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmybusbhopal.in%2Ftabular-view-routes%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://mybusbhopal.in/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmybusbhopal.in%2Ftabular-view-routes%2F&amp;format=xml" />
+<style>
+
+#map {
+      height: 70%;
+    }
+    .main-container{width: 950px;padding-top: 30px;margin: 0 auto;}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/mybusbhopal.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.19"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="index.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                    
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                  <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-comment-more"></i>
+                                        <span class="quantity">1</span>
+                                        <div class="mess-dropdown js-dropdown">
+                                            <div class="mess__title">
+                                                <p>You have 2 news message</p>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>Michelle Moreno</h6>
+                                                    <p>Have sent a photo</p>
+                                                    <span class="time">3 min ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
+                                                </div>
+                                                <div class="content">
+                                                    <h6>Diane Myers</h6>
+                                                    <p>You are now connected on message</p>
+                                                    <span class="time">Yesterday</span>
+                                                </div>
+                                            </div>
+                                            <div class="mess__footer">
+                                                <a href="#">View all messages</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-email"></i>
+                                        <span class="quantity">1</span>
+                                        <div class="email-dropdown js-dropdown">
+                                            <div class="email__title">
+                                                <p>You have 3 New Emails</p>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, 3 min ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, Yesterday</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__item">
+                                                <div class="image img-cir img-40">
+                                                    <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
+                                                </div>
+                                                <div class="content">
+                                                    <p>Meeting about new dashboard...</p>
+                                                    <span>Cynthia Harvey, April 12,,2018</span>
+                                                </div>
+                                            </div>
+                                            <div class="email__footer">
+                                                <a href="#">See all emails</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>You have 3 Notifications</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a email notification</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Your account has been blocked</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a new file</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">All notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <!--<div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>-->
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Traffic Management</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <!--<a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>-->
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Traffic Management</a>
+                                                    </h5>
+                                                    <span class="email">TrafficMangement@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- MAP DATA-->
+                                <div class="map-data m-b-40">
+                                    <h3 class="title-3 m-b-30">
+                                        <i class="zmdi zmdi-map"></i>map data</h3>
+
+
+                                    <div class="map-wrap m-t-45 m-b-20">
+
+                                        <div id="map" style="height: 284px;">
+        <script>
+          function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 13,
+              center: {lat: 23.2313, lng: 77.4326}
+            });
+
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvBKJwSCg6uYurJDtN_-pGpj_wtI02Fhg&callback=initMap">
+
+        var geocoder;
+          var map;
+            function initialize(){
+                geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(7.5653, 80.4303);
+                var mapOptions = {
+                    zoom: 8,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                createLine();
+            }
+            function createLine()
+            {
+
+                var address = document.getElementById('startvalue').value;
+                var address2 = document.getElementById('endvalue').value;
+
+                var temp, temp2;
+
+                geocoder.geocode({ 'address': address }, function (results, status) {
+        	    if (status != "OK") alert("geocode of address:"+address+" failed, status="+status);
+                    temp = results[0].geometry.location;
+        	    document.getElementById('results').innerHTML += temp.toUrlValue()+"<br>";
+                    geocoder.geocode({ 'address': address2 }, function (results, status) {
+                        if (status != "OK") alert("geocode of address:"+address+" failed, status="+status);
+                        temp2 = results[0].geometry.location;
+                        document.getElementById('results').innerHTML += temp2.toUrlValue()+"<br>";
+
+                    var route = [
+                      temp,
+                      temp2
+                    ];
+
+                    var polyline = new google.maps.Polyline({
+                        path: route,
+                        strokeColor: "#ff0000",
+                        strokeOpacity: 0.6,
+                        strokeWeight: 5
+                    });
+
+                    var lengthInMeters = google.maps.geometry.spherical.computeLength(polyline.getPath());
+                    // alert("polyline is "+lengthInMeters+" long");
+                    document.getElementById('results').innerHTML += "Polyline is "+lengthInMeters+" meters long<br>";
+
+                    polyline.setMap(map);
+                    });
+                });
+            }
+
+
+        </script>
+        <input id="startvalue" type="text" width="90" value="Megaswewa, Sri Lanka"></input>
+<input id="endvalue" type="text" width="90" value="Kandy, Sri Lanka"></input>
+<input type="button" value="Geocode" onclick="createLine()"></input>
+     <div id="map" style="width:600px;height:500px;"></div>
+<div id="results"></div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+                                <!-- END MAP DATA-->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="container main-container" style="min-height:100%;padding-bottom:75px">
+                          <div class="row">
+                          	<div class="col-md-12" id="primary">
+                          			<article id="post-358" class="post-358 page type-page status-publish hentry">
+                          		<h1 class="entry-title">Tabular View Routes</h1>
+                          	    <div class="entry-content">
+                          		    <div class="pl-15 pr-15">
+                          <div class="bb-1-theme-bk-55 fs-23 mb-10 pb-6"><span>Bus Routes of MyBus</span></div>
+                          </div>
+                          <div class="pl-15 pr-15">
+                          <div class="row">
+                          <div class="col-md-12"><span></span></div>
+                          </div>
+                          </div>
+                          <div class="pl-15 pr-15">
+                          <div class="row">
+                          <div class="col-md-12">
+                          <table>
+                          <tbody>
+                          <tr>
+                          <td>
+                          <div><span class="fa fa-bus fs-21" style="margin-right:4px;color: #ed1c24;"></span><span class="fs-18" style="margin:0 5px">Selected Bus Route :</span></div>
+                          </td>
+                          <td>
+                          <div><span><select class="form-control" name="routes" onchange="location=this.value;"><option value="http://mybusbhopal.in/tabular-view-routes/?route=101" >101 (TR-4) Chiraiyu To Mandideep</option></div>
+                          </td>
+                          <td>
+                          <div></div>
+                          </td>
+                          <td>
+                          <div><a target="_blank" href="" class="btn btn-primary ml-6" style="color:#fff">Print Route</a></div>
+                          </td>
+                          </tr>
+                          </tbody>
+                          </table></div>
+                          </p></div>
+                          </p></div>
+                          <div class="pl-15 pr-15">
+                          <div class="row">
+                          <div class="col-md-12">
+                          <div class="mx-auto col-md-12 mb-3P" style="padding:0">
+                          <div class="form-box-signup bg-fa-i br-3" style="padding:0">
+                          <div class="fs-18 fw-b">
+                          <table class="table table-striped fs-15">
+                          <thead class="thead-inverse">
+                          <tr>
+                          <th>S. No.</th>
+                          <th>Route No.</th>
+                          <th>Bus Stand Name</th>
+                          <th>Map Route</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                          <td>1</td>
+                          <td>101 (TR-4)</td>
+                          <td>CHIRAIYU HOSPITAL (A)</td>
+                          <td>
+                          <form method="post" action=""><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>2</td>
+                          <td>101 (TR-4)</td>
+                          <td>NAI BASTI (A)</td>
+                          <td>
+                          <form method="post" action=""><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>3</td>
+                          <td>101 (TR-4)</td>
+                          <td>BHAISA KHEDI (A)</td>
+                          <td>
+                          <form method="post" action=""><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>4</td>
+                          <td>101 (TR-4)</td>
+                          <td>SEHORE NAKA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>5</td>
+                          <td>101 (TR-4)</td>
+                          <td>KALI MANDIR BAIRAGARH (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>6</td>
+                          <td>101 (TR-4)</td>
+                          <td>CHANCHAL CHOURAHA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>7</td>
+                          <td>101 (TR-4)</td>
+                          <td>CIVIL HOSPITAL (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>8</td>
+                          <td>101 (TR-4)</td>
+                          <td>ST HIRDARAM CHOURAHA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>9</td>
+                          <td>101 (TR-4)</td>
+                          <td>PUMP HOUSE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>10</td>
+                          <td>101 (TR-4)</td>
+                          <td>SUNDARVAN GARDEN (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>11</td>
+                          <td>101 (TR-4)</td>
+                          <td>HALALPUR BUS STAND (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>12</td>
+                          <td>101 (TR-4)</td>
+                          <td>LALGHATI (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>13</td>
+                          <td>101 (TR-4)</td>
+                          <td>VIP GUEST HOUSE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>14</td>
+                          <td>101 (TR-4)</td>
+                          <td>KOH-E-FIZA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>15</td>
+                          <td>101 (TR-4)</td>
+                          <td>COLLECTORATE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>16</td>
+                          <td>101 (TR-4)</td>
+                          <td>SBI CHOURAHA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>17</td>
+                          <td>101 (TR-4)</td>
+                          <td>ROYAL MARKET (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>18</td>
+                          <td>101 (TR-4)</td>
+                          <td>PEERGATE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>19</td>
+                          <td>101 (TR-4)</td>
+                          <td>MOTI MASJID (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>20</td>
+                          <td>101 (TR-4)</td>
+                          <td>KAMLA PARK (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>21</td>
+                          <td>101 (TR-4)</td>
+                          <td>POLYTECHNIC (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>22</td>
+                          <td>101 (TR-4)</td>
+                          <td>RAVINDRA BHAWAN (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>23</td>
+                          <td>101 (TR-4)</td>
+                          <td>ROSHANPURA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>24</td>
+                          <td>101 (TR-4)</td>
+                          <td>NEW MARKET,TOP &#038; TOWN (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>25</td>
+                          <td>101 (TR-4)</td>
+                          <td>NANKE PETROL PUMP (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>26</td>
+                          <td>101 (TR-4)</td>
+                          <td>PRAKASH TARUN PUSHKAR (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>27</td>
+                          <td>101 (TR-4)</td>
+                          <td>1250 HOSPITAL (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>28</td>
+                          <td>101 (TR-4)</td>
+                          <td>RED CROSS HOSPITAL (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>29</td>
+                          <td>101 (TR-4)</td>
+                          <td>CONGRESS BHAWAN (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>30</td>
+                          <td>101 (TR-4)</td>
+                          <td>VYAPAM (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>31</td>
+                          <td>101 (TR-4)</td>
+                          <td>BOARD OFFICE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>32</td>
+                          <td>101 (TR-4)</td>
+                          <td>SARGAM TALKIES (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>33</td>
+                          <td>101 (TR-4)</td>
+                          <td>7 NO.STOP (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>34</td>
+                          <td>101 (TR-4)</td>
+                          <td>HABIBGANJ R/STATION-1 No (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>35</td>
+                          <td>101 (TR-4)</td>
+                          <td>GANESH MANDIR NAKA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>36</td>
+                          <td>101 (TR-4)</td>
+                          <td>AMPRI (RRL) (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>37</td>
+                          <td>101 (TR-4)</td>
+                          <td>NARAYAN NAGAR (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>38</td>
+                          <td>101 (TR-4)</td>
+                          <td>B.U.UNIVERSITY (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>39</td>
+                          <td>101 (TR-4)</td>
+                          <td>VIDHYA NAGAR (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>40</td>
+                          <td>101 (TR-4)</td>
+                          <td>BAGSEVANIYA JUNCTION (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>41</td>
+                          <td>101 (TR-4)</td>
+                          <td>AHAMADPUR R/C (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>42</td>
+                          <td>101 (TR-4)</td>
+                          <td>PARAS HERMITAGE/ASHIMA MALL (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>43</td>
+                          <td>101 (TR-4)</td>
+                          <td>CHINAR FORTUNE CITY (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>44</td>
+                          <td>101 (TR-4)</td>
+                          <td>KALI MANDIR JAATKHEDI (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>45</td>
+                          <td>101 (TR-4)</td>
+                          <td>SHRI RAM COLONY (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>46</td>
+                          <td>101 (TR-4)</td>
+                          <td>R.K.D.F.COLLAGE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>47</td>
+                          <td>101 (TR-4)</td>
+                          <td>ALLAHABAD  BANK BRT (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>48</td>
+                          <td>101 (TR-4)</td>
+                          <td>MISROD (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>49</td>
+                          <td>101 (TR-4)</td>
+                          <td>SCOPE COLLEGE (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>50</td>
+                          <td>101 (TR-4)</td>
+                          <td>11 MILES (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>51</td>
+                          <td>101 (TR-4)</td>
+                          <td>FUN CITY (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>52</td>
+                          <td>101 (TR-4)</td>
+                          <td>INDUS TOWN (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>53</td>
+                          <td>101 (TR-4)</td>
+                          <td>SAMARDHA (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>54</td>
+                          <td>101 (TR-4)</td>
+                          <td>MANDIDEEP (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          <tr>
+                          <td>55</td>
+                          <td>101 (TR-4)</td>
+                          <td>HEG MANDIDEEP (A)</td>
+                          <td>
+                          <form method="post" action=" "><input style="display:none" type="text" name="routename" value="101" /><button style="cursor: pointer;" type="submit" class="btn btn-link p-0" style=""><span>View Route Map</span></button></form>
+                          </td>
+                          </tr>
+                          </tbody>
+                          </table>
+                          </div></div>
+                          </div>
+                          </div></div>
+                          </p></div>
+                          </p></div>
+                          	    </div><!-- .entry-content -->
+
+                          	    	<footer class="clearfix">
+                          	    	</footer><!-- .entry -->
+                          	</article><!-- #post-358 -->
+                          <div id="comments" class="comments-area">
+
+
+                          	</div><!-- #comments .comments-area -->	</div>
+                          </div>
+                          </div>
+
+                                <!-- END MAP DATA-->
+
+                            </div>
+                        </div>
+<!-- analytics  -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">recent reports</h3>
+                <div class="chart-info">
+                    <div class="chart-info__left">
+                        <div class="chart-note">
+                            <span class="dot dot--blue"></span>
+                            <span>Off-Time</span>
+                        </div>
+                        <div class="chart-note mr-0">
+                            <span class="dot dot--green"></span>
+                            <span>On-Time</span>
+                        </div>
+                    </div>
+                    <div class="chart-info__right">
+                        <div class="chart-statis">
+                            <span class="index incre">
+                                <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                            <span class="label">On-Time</span>
+                        </div>
+                        <div class="chart-statis mr-0">
+                            <span class="index decre">
+                                <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                            <span class="label">Off-Time</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-report__chart">
+                    <canvas id="recent-rep-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="au-card chart-percent-card">
+            <div class="au-card-inner">
+                <h3 class="title-2 tm-b-5">Todays Traffic</h3>
+                <div class="row no-gutters">
+                    <div class="col-xl-6">
+                        <div class="chart-note-wrap">
+                            <div class="chart-note mr-0 d-block">
+                                <span class="dot dot--blue"></span>
+                                <span>Normal Traffic</span>
+                            </div>
+                            <div class="chart-note mr-0 d-block">
+                                <span class="dot dot--red"></span>
+                                <span>High Traffic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="percent-chart">
+                            <canvas id="percent-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+  <div class="container" style="background:white;">
+    <h2>Bus Delay</h2>
+    <p><br></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Bus Name & Route</th>
+          <th>Current Location</th>
+          <th>Delay</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tr-4 Mandideep</td>
+          <td>Boardoffice</td>
+          <td style="color:red;">-7m</td>
+        </tr>
+        <tr>
+          <td>304 Neelbad</td>
+          <td>New Market</td>
+          <td style="color:green;">0m</td>
+        </tr>
+        <tr>
+          <td>SR2 Nehru Nagar</td>
+          <td>MP Nagar</td>
+          <td style="color:red;">-10m</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>HACKATHON FOR SMART BHOPAL <a href="http://bnest.in/">--BNEST</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+    <script src="vendor/vector-map/jquery.vmap.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.min.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.world.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.brazil.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.europe.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.france.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.germany.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.russia.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.usa.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
